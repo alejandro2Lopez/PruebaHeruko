@@ -1,0 +1,45 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_importmap_tags
+    %body
+    .area
+    %nav.main-menu
+
+      %ul
+        %h1.colorh1 Administrative menu 
+      %ul
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-user.fa-2x
+            %span.nav-text
+              Manage user
+        %li.has-subnav
+          %a{:href => "#"}
+            %i.fa.fa-solid.fa-utensils.fa-2x
+            %span.nav-text
+              Manage chef
+        %li.has-subnav
+          %a{:href => "#"}
+            %i.fa.fa-solid.fa-user-lock.fa-2x
+            %span.nav-text
+              block client
+        %li.has-subnav
+          %a{:href => "#"}
+            %i.fa.fa-solid.fa-bell-concierge.fa-2x
+            %span.nav-text           
+              Manage Orders
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-solid.fa-clock-rotate-left.fa-2x
+            %span.nav-text
+              Manage state
+%body
+  %div{:style => "position:relative; padding: 300px 200px; top:-250px;"}
+    = yield

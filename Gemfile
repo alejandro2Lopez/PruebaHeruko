@@ -5,6 +5,7 @@ ruby '2.7.0'
 
 gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
 
+gem 'bootstrap', '~> 4.1.3'
 gem 'bootsnap', require: false
 gem 'importmap-rails'
 gem 'haml'

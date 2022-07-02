@@ -1,0 +1,31 @@
+es:
+  application:
+    list_of: Lista de %{model}
+    back: Regresar
+    save: Guardar
+    saving: Guardando...
+    edit: Editar
+    new: Nuevo
+    show: Mostrar
+    delete: Eliminar
+    name: Nombre
+    CRUDs Available: CRUDs disponibles
+    want_to_delete: Quieres Eliminar
+    accept: Aceptar
+    reject: Rechazar
+    select: Seleccione
+    location: Lugar    
+  activerecord:
+    modules:
+      user:
+        one: Usuario
+        other: Usuarios
+    attributes:      
+      user:
+        name: Nombre
+        password: contraseña
+        mail: e-mail        
+        address: direccion fisica
+        roles:
+          administrator: administrador
+          chef: cocinero

@@ -1,0 +1,23 @@
+%p#notice= notice
+.div.m-4
+  .card
+    .card-body
+      %h5.card-title
+        = t('activerecord.attributes.user.name')
+      %p.card-text &nbsp #{@user.name}
+      %h5.card-title
+        = t('activerecord.attributes.user.password')
+      %p.card-text &nbsp #{@user.password}
+      %h5.card-title
+        = t('activerecord.attributes.user.mail')
+      %p.card-text &nbsp #{@user.mail}
+      %h5.card-title
+        = t('activerecord.attributes.user.address')
+      %p.card-text &nbsp #{@user.address}
+      %h5.card-title
+        = t('activerecord.attributes.user.role')
+      %p.card-text &nbsp #{@user.role}
+
+  .row.mt-3
+    .offset-3.col-3
+      = link_to t('application.back'), users_path, class: "btn btn-secundary btn-block"

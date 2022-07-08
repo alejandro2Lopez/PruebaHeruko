@@ -13,33 +13,43 @@
     %nav.main-menu
 
       %ul
-        %h1.colorh1 Administrative menu 
+        %h4.colorh1 
+          = t('application.menu_Administrate') 
       %ul
         %li
           %a{:href => "#"}
             %i.fa.fa-user.fa-2x
             %span.nav-text
-              Manage user
+
+              =t('application.manage', model: t('activerecord.modules.user.other'))
         %li.has-subnav
           %a{:href => "#"}
             %i.fa.fa-solid.fa-utensils.fa-2x
             %span.nav-text
-              Manage chef
+ 
+              =t('application.manage', model: t('activerecord.modules.chef.other'))
+        %li.has-subnav
+          %a{:href => dishes_path}
+            %i.fa.fa-solid.fa-bowl-food.fa-2x
+            %span.nav-text
+ 
+              =t('application.manage', model: t('activerecord.modules.dish.other'))   
+               
         %li.has-subnav
           %a{:href => "#"}
             %i.fa.fa-solid.fa-user-lock.fa-2x
             %span.nav-text
-              block client
+              =t('application.block', model: t('activerecord.modules.client.other'))
         %li.has-subnav
           %a{:href => "#"}
             %i.fa.fa-solid.fa-bell-concierge.fa-2x
-            %span.nav-text           
-              Manage Orders
+            %span.nav-text             
+              =t('application.manage', model: t('activerecord.modules.order.other'))
         %li
           %a{:href => "#"}
             %i.fa.fa-solid.fa-clock-rotate-left.fa-2x
             %span.nav-text
-              Manage state
+              =t('application.manage', model: t('activerecord.modules.state.other'))
 %body
   %div{:style => "position:relative; padding: 300px 200px; top:-250px;"}
     = yield

@@ -1,0 +1,27 @@
+.div.m-2
+  %h2 Dish
+  .card
+    %img.img
+      =image_tag(@dish.image, style: 'height:75%;width:100%;')
+      .container
+        %h3
+          %b 
+            = @dish.name
+        %h4 
+          =t('activerecord.attributes.dish.description')
+        %h5 
+          %p 
+            = @dish.description
+        %h6 
+          =t('activerecord.attributes.dish.cost')
+        %h7 
+          %p 
+            = @dish.cost
+        %h6
+          =t('activerecord.attributes.dish.enable')
+        %h7 
+          %p 
+            =  @dish.isEnable
+  .row.mt-3
+    .offset-3.col-3
+      = link_to t('application.back'), dishes_path, class: "btn btn-secundary btn-block"

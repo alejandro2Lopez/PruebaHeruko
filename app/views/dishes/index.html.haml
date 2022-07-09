@@ -3,38 +3,47 @@
     %p{:style => "color: green"}= notice
     %h1.mb-4
       = t('application.list_of', model: t('activerecord.modules.dish.other'))
-      .float-right
-        = link_to t('application.new', model: t('activerecord.modules.dish.one')), new_dish_path, class: "btn btn-primary"
-  %table.table.table-striped
-    %thread
-      %tr
-        %th= t('activerecord.attributes.dish.name')
-        %th= t('activerecord.attributes.dish.description')
-        %th= t('activerecord.attributes.dish.cost')
-        %th= t('activerecord.attributes.dish.enable')
-        %th= t('activerecord.attributes.dish.image')
-        %th
-        %th
-        %th
-    %tbody
-      - @dishes.each do |dish|
-        %tr
-          %td= dish.name
-          %td= dish.description
-          %td= dish.cost
-          %td= dish.isEnable
-          %td= link_to image_tag(dish.image, size:'50'),image_tag(dish.image, size:'100')
-          %td
-            = link_to  dish_path(dish) do
-              %span{:title => t('application.show')}
-                %i.fa-black.fa-regular.fa-eye.fa-1.5x
-               
-          %td
-            = link_to edit_dish_path(dish) do
-              %span{:title => t('application.edit')}
-                %i.fa-green.fa-regular.fa-pen-to-square        
+  %div
+    = search_form_for @q do |f|
+    
+      \#{f.search_field :name_cont, :type => "text2"}
+      = button_tag( :class => "button button2") do
+        Buscar
+        %i.fa-solid.fa-magnifying-glass
 
-          %td 
-            = link_to dish, method: :delete do
-              %span{:title => t('application.delete')}
-                %i.fa-red.fa-solid.fa-trash
+      .float-right
+        = link_to t('application.new', model: t('activerecord.modules.dish.one')), new_dish_path, class: "button1 button2"
+  %div
+    %table.table.table-striped
+      %thread
+        %tr
+          %th= t('activerecord.attributes.dish.name')
+          %th= t('activerecord.attributes.dish.description')
+          %th= t('activerecord.attributes.dish.cost')
+          %th= t('activerecord.attributes.dish.enable')
+          %th= t('activerecord.attributes.dish.image')
+          %th
+          %th
+          %th
+      %tbody
+        - @dishes.each do |dish|
+          %tr
+            %td= dish.name
+            %td= dish.description
+            %td= dish.cost
+            %td= dish.isEnable
+            %td= link_to image_tag(dish.image, size:'50'),image_tag(dish.image, size:'100')
+            %td
+              = link_to  dish_path(dish) do
+                %span{:title => t('application.show')}
+                  %i.fa-black.fa-regular.fa-eye.fa-1.5x
+                  
+            %td
+              = link_to edit_dish_path(dish) do
+                %span{:title => t('application.edit')}
+                  %i.fa-green.fa-regular.fa-pen-to-square        
+
+            %td 
+              = link_to dish, method: :delete do
+                %span{:title => t('application.delete')}
+                  %i.fa-red.fa-solid.fa-trash

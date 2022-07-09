@@ -14,15 +14,14 @@
     = f.select(:isEnable, options_for_select(method_Enable, @dish.isEnable),
                         {prompt: t('application.select')}, class: 'form-control')
   %div>
-    "field">
-    \#{f.label :image}
-    \#{f.file_field :image}
+    =f.file_field :image
+    
 
   .row
     .offset-3.col-3
-      = link_to t('application.back'), dishes_path, class: "btn btn-primary btn-lg btn-block"
+      = link_to t('application.back'), dishes_path, class: "button_Back button_Back"
     .col-3
-      = button_tag t('application.save'), class: "btn btn-outline-success btn-lg btn-block", 'data-disable-with': t('application.saving')
+      = button_tag t('application.save'), class: "button_saving button_Back", 'data-disable-with': t('application.saving')
 
 
 

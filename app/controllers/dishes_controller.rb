@@ -2,7 +2,8 @@ class DishesController < ApplicationController
   before_action :set_dish, only: %i[show edit update destroy]
 
   def index
-    @dishes = Dish.all
+    @q = Dish.ransack(params[:q])
+    @dishes = @q.result
   end
 
   def show; end

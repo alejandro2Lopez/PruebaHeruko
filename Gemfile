@@ -6,11 +6,13 @@ ruby '3.0.0'
 gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
 gem 'bootstrap', '~> 4.1.3'
 gem 'bootsnap', require: false
+
 gem 'importmap-rails'
 gem 'haml'
 gem 'jbuilder'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
+gem 'ransack'
 gem 'rubocop'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'

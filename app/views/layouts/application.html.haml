@@ -1,6 +1,8 @@
 !!!
 %html
+
   %head
+
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
@@ -13,33 +15,45 @@
     %nav.main-menu
 
       %ul
-        %h1.colorh1 Administrative menu 
-      %ul
-        %li
-          %a{:href => "#"}
-            %i.fa.fa-user.fa-2x
-            %span.nav-text
-              Manage user
-        %li.has-subnav
-          %a{:href => "#"}
-            %i.fa.fa-solid.fa-utensils.fa-2x
-            %span.nav-text
-              Manage chef
-        %li.has-subnav
-          %a{:href => "#"}
-            %i.fa.fa-solid.fa-user-lock.fa-2x
-            %span.nav-text
-              block client
-        %li.has-subnav
-          %a{:href => "#"}
-            %i.fa.fa-solid.fa-bell-concierge.fa-2x
-            %span.nav-text           
-              Manage Orders
-        %li
-          %a{:href => "#"}
-            %i.fa.fa-solid.fa-clock-rotate-left.fa-2x
-            %span.nav-text
-              Manage state
+        %h4.colorh1 
+          = t('application.menu_Administrate') 
+      %div.2x
+        %ul
+          %li
+            %a{:href => "#"}
+              %i.fa.fa-user.fa-2x
+              %span.nav-text
+
+                =t('application.manage', model: t('activerecord.modules.user.other'))
+          %li.has-subnav
+            %a{:href => "#"}
+              %i.fa.fa-solid.fa-utensils.fa-2x
+              %span.nav-text
+  
+                =t('application.manage', model: t('activerecord.modules.chef.other'))
+          %li.has-subnav
+            %a{:href => dishes_path}
+              %i.fa.fa-solid.fa-bowl-food.fa-2x
+              %span.nav-text
+  
+                =t('application.manage', model: t('activerecord.modules.dish.other'))   
+                
+          %li.has-subnav
+            %a{:href => "#"}
+              %i.fa.fa-solid.fa-user-lock.fa-2x
+              %span.nav-text
+                =t('application.block', model: t('activerecord.modules.client.other'))
+          %li.has-subnav
+            %a{:href => "#"}
+              %i.fa.fa-solid.fa-bell-concierge.fa-2x
+              %span.nav-text             
+                =t('application.manage', model: t('activerecord.modules.order.other'))
+          %li
+            %a{:href => "#"}
+              %i.fa.fa-solid.fa-clock-rotate-left.fa-2x
+              %span.nav-text
+                =t('application.manage', model: t('activerecord.modules.state.other'))
+
 %body
-  %div{:style => "position:relative; padding: 300px 200px; top:-250px;"}
+  %div{:style => "position:relative; padding: 250px 100px; top:-250px;"}
     = yield

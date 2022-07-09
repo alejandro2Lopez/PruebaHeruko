@@ -1,2 +1,0 @@
-class Cambio < ApplicationRecord
-end

@@ -139,8 +139,7 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.0)
-    minitest (5.16.1)
+    minitest (5.16.2)
     msgpack (1.5.3)
     net-imap (0.2.3)
       digest
@@ -202,6 +201,10 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
+    ransack (3.2.1)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -226,7 +229,7 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.11.0)
-    rubocop (1.31.1)
+    rubocop (1.31.2)
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.1.0.0)
@@ -320,6 +323,7 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.3)
+  ransack
   rspec-rails
   rubocop
   sass-rails (~> 5.0)

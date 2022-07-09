@@ -78,9 +78,6 @@ GEM
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
-    bootstrap_form (5.1.0)
-      actionpack (>= 5.2)
-      activemodel (>= 5.2)
     builder (3.2.4)
     capybara (3.37.1)
       addressable
@@ -306,12 +303,12 @@ GEM
     zeitwerk (2.6.0)
 
 PLATFORMS
+  ruby
   x86_64-linux
 
 DEPENDENCIES
   bootsnap
   bootstrap (~> 4.1.3)
-  bootstrap_form (~> 5.1)
   capybara
   debug
   erb2haml
@@ -337,7 +334,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.0.0p0
+   ruby 2.7.0p0
 
 BUNDLED WITH
    2.3.13

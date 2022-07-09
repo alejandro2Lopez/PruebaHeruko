@@ -1,27 +1,29 @@
-= form_for @dish, validate: true do |f|
-  .form-group.ml-4.mr-4
-    = f.label t('activerecord.attributes.dish.name'), class: "form-label required"
-    = f.text_field :name, autofocus: true, class: "form-control"
-  .form-group.ml-4.mr-4
-    = f.label t('activerecord.attributes.dish.description'), class: "form-label required"
-    = f.text_field :description, autofocus: true, class: "form-control"
-  .form-group.ml-4.mr-4
-    = f.label  t('activerecord.attributes.dish.cost'), class: "form-label required"
-    = f.text_field :cost, autofocus: true, class: "form-control"
+.div.m-4
+  .page.header_new
+    = form_for @dish, validate: true do |f|
+      .form-group.ml-4.mr-4
+        = f.label t('activerecord.attributes.dish.name'), class: "form-label required"
+        = f.text_field :name, autofocus: true, class: "form-control"
+      .form-group.ml-4.mr-4
+        = f.label t('activerecord.attributes.dish.description'), class: "form-label required"
+        = f.text_field :description, autofocus: true, class: "form-control"
+      .form-group.ml-4.mr-4
+        = f.label  t('activerecord.attributes.dish.cost'), class: "form-label required"
+        = f.text_field :cost, autofocus: true, class: "form-control"
 
-  .form-group.ml-4.mr-4 
-    = f.label t('activerecord.attributes.dish.enable'), class: "form-label required"
-    = f.select(:isEnable, options_for_select(method_Enable, @dish.isEnable),
-                        {prompt: t('application.select')}, class: 'form-control')
-  %div>
-    =f.file_field :image
-    
+      .form-group.ml-4.mr-4 
+        = f.label t('activerecord.attributes.dish.enable'), class: "form-label required"
+        = f.select(:isEnable, options_for_select(method_Enable, @dish.isEnable),
+                            {prompt: t('application.select')}, class: 'form-control')
+      %div>
+        =f.file_field :image
+        
 
-  .row
-    .offset-3.col-3
-      = link_to t('application.back'), dishes_path, class: "button_Back button_Back"
-    .col-3
-      = button_tag t('application.save'), class: "button_saving button_Back", 'data-disable-with': t('application.saving')
+      .row
+        .offset-3.col-3
+          = link_to t('application.back'), dishes_path, class: "button_Back button_Back"
+        .col-3
+          = button_tag t('application.save'), class: "button_saving button_Back", 'data-disable-with': t('application.saving')
 
 
 

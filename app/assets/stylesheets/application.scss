@@ -10,12 +10,31 @@ font-size: 2em;
 position: relative;
 display: table-cell;
 width: 60px;
-height: 36px;
+height: 32px;
 text-align: center;
 vertical-align: middle;
 font-size:20px;
 }
-
+.fa_green {
+  position: relative;
+  display: table-cell;
+  width: 60px;
+  height: 32px;
+  text-align: center;
+  vertical-align: middle;
+  font-size:20px;
+  color: #258305;  
+}
+.fa_red {
+  position: relative;
+  display: table-cell;
+  width: 60px;
+  height: 32px;
+  text-align: center;
+  vertical-align: middle;
+  font-size:20px;
+  color: #a32708;  
+}
 
 .main-menu:hover,nav.main-menu.expanded {
 width:250px;
@@ -273,4 +292,8 @@ input[type=text2] {
   padding: 20px;
   text-align: left;
   font-size: 20px;
+}
+input:read-only {
+  background-color: #aaa;
+  border: 1px solid #888;
 }

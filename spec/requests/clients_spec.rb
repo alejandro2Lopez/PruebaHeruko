@@ -12,10 +12,10 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/cambios", type: :request do
+RSpec.describe "/clients", type: :request do
   
   # This should return the minimal set of attributes required to create a valid
-  # Cambio. As you add validations to Cambio, be sure to
+  # Client. As you add validations to Client, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
@@ -27,58 +27,58 @@ RSpec.describe "/cambios", type: :request do
 
   describe "GET /index" do
     it "renders a successful response" do
-      Cambio.create! valid_attributes
-      get cambios_url
+      Client.create! valid_attributes
+      get clients_url
       expect(response).to be_successful
     end
   end
 
   describe "GET /show" do
     it "renders a successful response" do
-      cambio = Cambio.create! valid_attributes
-      get cambio_url(cambio)
+      client = Client.create! valid_attributes
+      get client_url(client)
       expect(response).to be_successful
     end
   end
 
   describe "GET /new" do
     it "renders a successful response" do
-      get new_cambio_url
+      get new_client_url
       expect(response).to be_successful
     end
   end
 
   describe "GET /edit" do
     it "renders a successful response" do
-      cambio = Cambio.create! valid_attributes
-      get edit_cambio_url(cambio)
+      client = Client.create! valid_attributes
+      get edit_client_url(client)
       expect(response).to be_successful
     end
   end
 
   describe "POST /create" do
     context "with valid parameters" do
-      it "creates a new Cambio" do
+      it "creates a new Client" do
         expect {
-          post cambios_url, params: { cambio: valid_attributes }
-        }.to change(Cambio, :count).by(1)
+          post clients_url, params: { client: valid_attributes }
+        }.to change(Client, :count).by(1)
       end
 
-      it "redirects to the created cambio" do
-        post cambios_url, params: { cambio: valid_attributes }
-        expect(response).to redirect_to(cambio_url(Cambio.last))
+      it "redirects to the created client" do
+        post clients_url, params: { client: valid_attributes }
+        expect(response).to redirect_to(client_url(Client.last))
       end
     end
 
     context "with invalid parameters" do
-      it "does not create a new Cambio" do
+      it "does not create a new Client" do
         expect {
-          post cambios_url, params: { cambio: invalid_attributes }
-        }.to change(Cambio, :count).by(0)
+          post clients_url, params: { client: invalid_attributes }
+        }.to change(Client, :count).by(0)
       end
 
       it "renders a successful response (i.e. to display the 'new' template)" do
-        post cambios_url, params: { cambio: invalid_attributes }
+        post clients_url, params: { client: invalid_attributes }
         expect(response).to be_successful
       end
     end
@@ -90,42 +90,42 @@ RSpec.describe "/cambios", type: :request do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested cambio" do
-        cambio = Cambio.create! valid_attributes
-        patch cambio_url(cambio), params: { cambio: new_attributes }
-        cambio.reload
+      it "updates the requested client" do
+        client = Client.create! valid_attributes
+        patch client_url(client), params: { client: new_attributes }
+        client.reload
         skip("Add assertions for updated state")
       end
 
-      it "redirects to the cambio" do
-        cambio = Cambio.create! valid_attributes
-        patch cambio_url(cambio), params: { cambio: new_attributes }
-        cambio.reload
-        expect(response).to redirect_to(cambio_url(cambio))
+      it "redirects to the client" do
+        client = Client.create! valid_attributes
+        patch client_url(client), params: { client: new_attributes }
+        client.reload
+        expect(response).to redirect_to(client_url(client))
       end
     end
 
     context "with invalid parameters" do
       it "renders a successful response (i.e. to display the 'edit' template)" do
-        cambio = Cambio.create! valid_attributes
-        patch cambio_url(cambio), params: { cambio: invalid_attributes }
+        client = Client.create! valid_attributes
+        patch client_url(client), params: { client: invalid_attributes }
         expect(response).to be_successful
       end
     end
   end
 
   describe "DELETE /destroy" do
-    it "destroys the requested cambio" do
-      cambio = Cambio.create! valid_attributes
+    it "destroys the requested client" do
+      client = Client.create! valid_attributes
       expect {
-        delete cambio_url(cambio)
-      }.to change(Cambio, :count).by(-1)
+        delete client_url(client)
+      }.to change(Client, :count).by(-1)
     end
 
-    it "redirects to the cambios list" do
-      cambio = Cambio.create! valid_attributes
-      delete cambio_url(cambio)
-      expect(response).to redirect_to(cambios_url)
+    it "redirects to the clients list" do
+      client = Client.create! valid_attributes
+      delete client_url(client)
+      expect(response).to redirect_to(clients_url)
     end
   end
 end

@@ -8,8 +8,7 @@
   %table.table.table-striped
     %thread
       %tr
-        %th= t('activerecord.attributes.user.name')
-        %th= t('activerecord.attributes.user.password')
+        %th= t('activerecord.attributes.user.name')        
         %th= t('activerecord.attributes.user.mail')
         %th= t('activerecord.attributes.user.address')
         %th= t('activerecord.attributes.user.role')
@@ -17,8 +16,7 @@
     %tbody
       - @users.each do |user|
         %tr
-          %td= user.name
-          %td= user.password
+          %td= user.name          
           %td= user.mail
           %td= user.address
           %td= t("activerecord.attributes.user.roles.#{user.role}")

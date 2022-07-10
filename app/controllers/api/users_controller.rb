@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :set_user, only: %i[ show edit update destroy ]
   
   def index
-    @q = User.ransack(params[:q])
-    @users = @q.result.includes(:name, :mail, address, :role)
+    @users = User.all
   end
 
   def show; end

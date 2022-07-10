@@ -20,17 +20,11 @@
       %div.2x
         %ul
           %li
-            %a{:href => "#"}
+            %a{:href => users_path}
               %i.fa.fa-user.fa-2x
               %span.nav-text
 
                 =t('application.manage', model: t('activerecord.modules.user.other'))
-          %li.has-subnav
-            %a{:href => "#"}
-              %i.fa.fa-solid.fa-utensils.fa-2x
-              %span.nav-text
-  
-                =t('application.manage', model: t('activerecord.modules.chef.other'))
           %li.has-subnav
             %a{:href => dishes_path}
               %i.fa.fa-solid.fa-bowl-food.fa-2x

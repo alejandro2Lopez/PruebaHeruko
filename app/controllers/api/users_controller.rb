@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to user_url(@user), notice: "User was successfully created." 
+      render 'api/users/show', status: :created
     else
       render :new, status: :unprocessable_entity 
     end
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def update
 
     if @user.update(user_params)
-      redirect_to user_url(@user), notice: "User was successfully updated." 
+      render 'api/users/show', status: :ok
     else
       render :edit, status: :unprocessable_entity 
     end
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     
-    redirect_to users_url, notice: "User was successfully destroyed."     
+    render 'api/users/show', status: :ok
   end
 
   private

@@ -1,1 +1,8 @@
-json.array! @users, partial: "users/user", as: :user
+json.array! @users do |user|
+    json.id user.id
+    json.name user.name
+    json.password user.password
+    json.mail user.mail
+    json.address user.address
+    json.role user.role
+end

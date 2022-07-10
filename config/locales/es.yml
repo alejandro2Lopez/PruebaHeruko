@@ -1,31 +1,53 @@
 es:
   application:
     list_of: Lista de %{model}
-    back: Regresar
-    save: Guardar
-    saving: Guardando...
+    new: Nuevo %{model}
+    show: Mostrar 
     edit: Editar
-    new: Nuevo
-    show: Mostrar
     delete: Eliminar
-    name: Nombre
-    CRUDs Available: CRUDs disponibles
-    want_to_delete: Quieres Eliminar
+    back: Atrás
+    save: Guardar
+    saving: Guardando
     accept: Aceptar
-    reject: Rechazar
+    cancel: Cancelar
+    block: Bloquear %{model}
+    manage: Administrar %{model}
+    menu_Administrate: Menú administrativo
+    do_you_want_to_delete: Desea eliminar el %{model}
     select: Seleccione
-    location: Lugar    
+    was_successfuly_created: Fue creado con éxito
+    was_successfuly_updated: Fue eliminado con éxito
+    was_successfuly_deleted: Fue eliminado con éxito
   activerecord:
     modules:
+      dish:
+        one: Platillo
+        other: Platillos
       user:
-        one: Usuario
-        other: Usuarios
-    attributes:      
-      user:
-        name: Nombre
-        password: contraseña
-        mail: e-mail        
-        address: direccion fisica
-        roles:
-          administrator: administrador
-          chef: cocinero
+        one: usuario
+        other: usuarios
+      chef:
+        one: chef
+        other: chefs
+      order:
+        one: orden
+        other: ordenes
+      client:
+        one: cliente
+        other: clientes
+      state:
+        one: estado
+        other: estados
+    attributes:
+      dish:
+        name: Nombre 
+        description: Descripcion
+        cost: Costo
+        enable: Habilitado
+        image: Imagen
+      isEnable:
+        enable:
+          Yes: Si.
+          No:  No.
+
+

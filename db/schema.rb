@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_10_151608) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_15_154815) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -60,6 +60,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_10_151608) do
     t.string "isEnable"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "order_details", force: :cascade do |t|
+    t.bigint "dish_id"
+    t.bigint "client_id"
+    t.integer "isConfirm"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_order_details_on_client_id"
+    t.index ["dish_id"], name: "index_order_details_on_dish_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

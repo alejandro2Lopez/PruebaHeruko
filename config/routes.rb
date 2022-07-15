@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :clients
+  # resources :clients
   resources :dishes
-  scope module: :api, path: 'api' do
+
+  scope module: :api do
     resources :clients
     resources :dishes
   end

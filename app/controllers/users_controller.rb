@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     #@q = User.ransack(params[:q])
-    #@users = @q.result.includes(:name, :mail, address, :role)
+    #@users = @q.result.includes(:name, :mail, :address, :role)
   end
 
   def show; end

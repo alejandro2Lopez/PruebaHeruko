@@ -2,9 +2,9 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
   
   def index
-    @users = User.all
-    #@q = User.ransack(params[:q])
-    #@users = @q.result.includes(:name, :mail, :address, :role)
+    #@users = User.all
+    @q = User.ransack(params[:q])
+    @users = @q.result
   end
 
   def show; end

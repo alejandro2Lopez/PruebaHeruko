@@ -44,10 +44,20 @@ es:
         description: Descripcion
         cost: Costo
         enable: Habilitado
-        image: Imagen
-      isEnable:
+        image: Imagen        
         enable:
           Yes: Si.
           No:  No.
+      user:
+        name: Nombre
+        password: Contraseña
+        mail: Correo
+        address: Direccion
+        role: Rol
+        roles:
+          administrator: administrador
+          chef: cocinero
+
+        
 
 

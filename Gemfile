@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| 'https://github.com/#{repo}.git' }
 
-ruby '3.0.0'
+ruby '2.7.0'
 
 gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
 gem 'bootstrap', '~> 4.1.3'
 gem 'bootsnap', require: false
-gem 'email_validator' 
+gem 'email_validator'
 gem 'importmap-rails'
 gem 'haml'
 gem 'jbuilder'
@@ -14,7 +14,6 @@ gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'rack-cors'
 gem 'ransack'
-gem 'rack-cors'
 gem 'rubocop'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'

@@ -4,6 +4,7 @@ class CreateOrderDetails < ActiveRecord::Migration[7.0]
       t.belongs_to :dish
       t.belongs_to :client
       t.integer :isConfirm
+      
       t.timestamps
     end
   end

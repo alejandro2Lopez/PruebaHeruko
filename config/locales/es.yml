@@ -44,18 +44,20 @@ es:
         description: Descripcion
         cost: Costo
         enable: Habilitado
-        image: Imagen
-      options:
-        option:
+        image: Imagen        
+        enable:
           Yes: Si.
           No:  No.
-      client:
+      user:
         name: Nombre
-        last_name: Apellido
-        full_name: Nombre completo
-        email: Correo electronico
-        adress: Direccion
-        block: Bloqueado
-     
+        password: Contraseña
+        mail: Correo
+        address: Direccion
+        role: Rol
+        roles:
+          administrator: administrador
+          chef: cocinero
+
+        
 
 

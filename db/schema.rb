@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_07_143711) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_15_154815) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_07_143711) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+<<<<<<< HEAD
   create_table "appoinments", force: :cascade do |t|
     t.string "date"
     t.bigint "doctor_id"
@@ -76,6 +77,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_07_143711) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+=======
+
+  create_table "clients", force: :cascade do |t|
+    t.string "name"
+    t.string "last_name"
+    t.string "password"
+    t.string "email"
+    t.string "adress"
+    t.integer "block", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+
+>>>>>>> a9b602823a4fb0671bf8985558310d3a83b6d596
 
   create_table "dishes", force: :cascade do |t|
     t.string "name"
@@ -86,6 +102,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_07_143711) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "doctors", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -165,6 +182,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_07_143711) do
     t.datetime "updated_at", null: false
   end
 
+=======
+  create_table "order_details", force: :cascade do |t|
+    t.bigint "dish_id"
+    t.bigint "client_id"
+    t.integer "isConfirm"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_order_details_on_client_id"
+    t.index ["dish_id"], name: "index_order_details_on_dish_id"
+  end
+>>>>>>> a9b602823a4fb0671bf8985558310d3a83b6d596
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
 end

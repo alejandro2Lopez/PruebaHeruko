@@ -1,0 +1,49 @@
+.div.m-4
+  .page.header
+    %p{:style => "color: green"}= notice
+    %h1.mb-4
+      = t('application.list_of', model: t('activerecord.modules.client.other'))
+  %div
+    = search_form_for @q do |f|
+    
+      \#{f.search_field :name_cont, :type => "text2"}
+      = button_tag( :class => "button button2") do
+        Buscar
+        %i.fa-solid.fa-magnifying-glass
+
+      
+  %div
+    %table.table.table-striped
+      %thread
+        %tr
+          %th= t('activerecord.attributes.client.name')
+          %th= t('activerecord.attributes.client.last_name')
+          %th= t('activerecord.attributes.client.email')
+          %th= t('activerecord.attributes.client.adress')
+          %th= t('activerecord.attributes.client.block')
+          %th
+          %th
+          %th
+      %tbody
+        - @clients.each do |client|
+          %tr
+            %td= client.name
+            %td= client.last_name
+            %td= client.email
+            %td= client.adress
+            %td
+              -if client.block == "No"
+                %i.fa_green.fa-solid.fa-lock-open.fa-1.5x
+              -else 
+                %i.fa_red.fa-solid.fa-lock.fa-1.5x
+            %td
+              = link_to  client_path(client) do
+                %span{:title => t('application.show')}
+                  %i.fa-black.fa-regular.fa-eye.fa-1.5x
+                  
+            %td
+              = link_to edit_client_path(client) do
+                %span{:title => t('application.edit')}
+                  %i.fa-green.fa-regular.fa-pen-to-square  
+            %td      
+

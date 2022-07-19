@@ -12,6 +12,10 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
+RSpec.describe "/users", type: :request do
+  
+  # This should return the minimal set of attributes required to create a valid
+  # User. As you add validations to User, be sure to
 RSpec.describe "/clients", type: :request do
   
   # This should return the minimal set of attributes required to create a valid
@@ -27,44 +31,57 @@ RSpec.describe "/clients", type: :request do
 
   describe "GET /index" do
     it "renders a successful response" do
+<<<<<<< HEAD:spec/requests/users_spec.rb
       User.create! valid_attributes
       get users_url
+=======
       Client.create! valid_attributes
       get clients_url
+>>>>>>> a9b602823a4fb0671bf8985558310d3a83b6d596:spec/requests/clients_spec.rb
       expect(response).to be_successful
     end
   end
 
   describe "GET /show" do
     it "renders a successful response" do
+<<<<<<< HEAD:spec/requests/users_spec.rb
       user = User.create! valid_attributes
       get user_url(user)
+=======
       client = Client.create! valid_attributes
       get client_url(client)
+>>>>>>> a9b602823a4fb0671bf8985558310d3a83b6d596:spec/requests/clients_spec.rb
       expect(response).to be_successful
     end
   end
 
   describe "GET /new" do
     it "renders a successful response" do
+<<<<<<< HEAD:spec/requests/users_spec.rb
       get new_user_url
+=======
       get new_client_url
+>>>>>>> a9b602823a4fb0671bf8985558310d3a83b6d596:spec/requests/clients_spec.rb
       expect(response).to be_successful
     end
   end
 
   describe "GET /edit" do
     it "renders a successful response" do
+<<<<<<< HEAD:spec/requests/users_spec.rb
       user = User.create! valid_attributes
       get edit_user_url(user)
+=======
       client = Client.create! valid_attributes
       get edit_client_url(client)
+>>>>>>> a9b602823a4fb0671bf8985558310d3a83b6d596:spec/requests/clients_spec.rb
       expect(response).to be_successful
     end
   end
 
   describe "POST /create" do
     context "with valid parameters" do
+<<<<<<< HEAD:spec/requests/users_spec.rb
       it "creates a new User" do
         expect {
           post users_url, params: { user: valid_attributes }
@@ -74,6 +91,7 @@ RSpec.describe "/clients", type: :request do
       it "redirects to the created user" do
         post users_url, params: { user: valid_attributes }
         expect(response).to redirect_to(user_url(User.last))
+=======
       it "creates a new Client" do
         expect {
           post clients_url, params: { client: valid_attributes }
@@ -83,10 +101,12 @@ RSpec.describe "/clients", type: :request do
       it "redirects to the created client" do
         post clients_url, params: { client: valid_attributes }
         expect(response).to redirect_to(client_url(Client.last))
+>>>>>>> a9b602823a4fb0671bf8985558310d3a83b6d596:spec/requests/clients_spec.rb
       end
     end
 
     context "with invalid parameters" do
+<<<<<<< HEAD:spec/requests/users_spec.rb
       it "does not create a new User" do
         expect {
           post users_url, params: { user: invalid_attributes }
@@ -95,6 +115,7 @@ RSpec.describe "/clients", type: :request do
 
       it "renders a successful response (i.e. to display the 'new' template)" do
         post users_url, params: { user: invalid_attributes }
+=======
       it "does not create a new Client" do
         expect {
           post clients_url, params: { client: invalid_attributes }
@@ -103,6 +124,7 @@ RSpec.describe "/clients", type: :request do
 
       it "renders a successful response (i.e. to display the 'new' template)" do
         post clients_url, params: { client: invalid_attributes }
+>>>>>>> a9b602823a4fb0671bf8985558310d3a83b6d596:spec/requests/clients_spec.rb
         expect(response).to be_successful
       end
     end
@@ -114,6 +136,7 @@ RSpec.describe "/clients", type: :request do
         skip("Add a hash of attributes valid for your model")
       }
 
+<<<<<<< HEAD:spec/requests/users_spec.rb
       it "updates the requested user" do
         user = User.create! valid_attributes
         patch user_url(user), params: { user: new_attributes }
@@ -126,6 +149,7 @@ RSpec.describe "/clients", type: :request do
         patch user_url(user), params: { user: new_attributes }
         user.reload
         expect(response).to redirect_to(user_url(user))
+=======
       it "updates the requested client" do
         client = Client.create! valid_attributes
         patch client_url(client), params: { client: new_attributes }
@@ -138,21 +162,26 @@ RSpec.describe "/clients", type: :request do
         patch client_url(client), params: { client: new_attributes }
         client.reload
         expect(response).to redirect_to(client_url(client))
+>>>>>>> a9b602823a4fb0671bf8985558310d3a83b6d596:spec/requests/clients_spec.rb
       end
     end
 
     context "with invalid parameters" do
       it "renders a successful response (i.e. to display the 'edit' template)" do
+<<<<<<< HEAD:spec/requests/users_spec.rb
         user = User.create! valid_attributes
         patch user_url(user), params: { user: invalid_attributes }
+=======
         client = Client.create! valid_attributes
         patch client_url(client), params: { client: invalid_attributes }
+>>>>>>> a9b602823a4fb0671bf8985558310d3a83b6d596:spec/requests/clients_spec.rb
         expect(response).to be_successful
       end
     end
   end
 
   describe "DELETE /destroy" do
+<<<<<<< HEAD:spec/requests/users_spec.rb
     it "destroys the requested user" do
       user = User.create! valid_attributes
       expect {
@@ -164,6 +193,7 @@ RSpec.describe "/clients", type: :request do
       user = User.create! valid_attributes
       delete user_url(user)
       expect(response).to redirect_to(users_url)
+=======
     it "destroys the requested client" do
       client = Client.create! valid_attributes
       expect {
@@ -175,6 +205,7 @@ RSpec.describe "/clients", type: :request do
       client = Client.create! valid_attributes
       delete client_url(client)
       expect(response).to redirect_to(clients_url)
+>>>>>>> a9b602823a4fb0671bf8985558310d3a83b6d596:spec/requests/clients_spec.rb
     end
   end
 end

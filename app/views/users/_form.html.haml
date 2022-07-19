@@ -1,23 +1,25 @@
-= form_for @user, validate: true do |f|
-  .form-group.ml-4.mr-4
-    = f.label :name, class: "form-label required"
-    = f.text_field :name, autofocus: true, class: "form-control"
-  .form-group.ml-4.mr-4
-    = f.label :password, class: "form-label required"
-    = f.text_field :password, autofocus: true, class: "form-control"
-  .form-group.ml-4.mr-4
-    = f.label :mail, class: "form-label required"
-    = f.text_field :mail, autofocus: true, class: "form-control"
-  .form-group.ml-4.mr-4
-    = f.label :address, class: "form-label required"
-    = f.text_field :address, autofocus: true, class: "form-control"
-  .form-group.ml-4.mr-4
-    = f.label :role, class: 'form-label required'
-    = f.select(:role, options_for_select(roles, @user.role),
-                        {prompt:"Seleccione"}, class: 'form-control')
-
-  .row
-    .offset-3.col-3
-      = link_to "Atras", users_path, class: "btn btn-secondary btn-block"
-    .col-3
-      = button_tag "Guardar" , class: "btn btn-outline-success btn-block", 'data-disable-with': "Guardando" 
+.div.m-4
+  .page.header_new
+    = form_for @user, validate: true do |f|
+      .form-group.ml-4.mr-4
+        = f.label t('activerecord.attributes.user.name'), class: "form-label required"
+        = f.text_field :name, autofocus: true, class: "form-control"
+      .form-group.ml-4.mr-4
+        = f.label t('activerecord.attributes.user.password'), class: "form-label required"
+        = f.text_field :password, autofocus: true, class: "form-control"
+      .form-group.ml-4.mr-4
+        = f.label  t('activerecord.attributes.user.mail'), class: "form-label required"
+        = f.text_field :mail, autofocus: true, class: "form-control"
+      .form-group.ml-4.mr-4
+        = f.label t('activerecord.attributes.user.address'), class: "form-label required"
+        = f.text_field :address, autofocus: true, class: "form-control"
+      .form-group.ml-4.mr-4 
+        = f.label t('activerecord.attributes.user.role'), class: "form-label required"
+        = f.select(:role, options_for_select(roles, @user.role),
+                            {prompt: t('application.select')}, class: 'form-control')
+        
+      .row
+        .offset-3.col-3
+          = link_to t('application.back'), users_path, class: "button_Back button_Back"
+        .col-3
+          = button_tag t('application.save'), class: "button_saving button_Back", 'data-disable-with': t('application.saving')

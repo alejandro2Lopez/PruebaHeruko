@@ -1,51 +1,59 @@
-class UsersController < ApplicationController
-  skip_before_action :verify_authenticity_token
-  before_action :set_user, only: %i[ show edit update destroy ]
+module Api
+  class UsersController < ApplicationController
+    skip_before_action :verify_authenticity_token
+    before_action :set_user, only: %i[ show edit update destroy ]
   
-  def index
-    @users = User.all
-  end
-
-  def show; end
-
-  def new
-    @user = User.new
-  end
-
-  def edit; end
-
-  def create
-    @user = User.new(user_params)
-
-    if @user.save
-      redirect_to user_url(@user), notice: "User was successfully created." 
-    else
-      render :new, status: :unprocessable_entity 
+    def index
+      @users = User.all
     end
+
+    def show; end
+
+    def new
+      @user = User.new
+    end
+
+    def edit; end
+
+    def create
+      @user = User.find_by(name: params[:name])
+
+      if @user.nil? == false
+        if @user.password == params[:password] && @user != :undefined
+          @isValidate = true
+          render 'api/users/showValidates', status: :created
+        else       
+          @isValidate = false
+          render 'api/users/showValidates', status: :created
+        end
+      else
+        @isValidate = false
+        render 'api/users/showValidates', status: :created
+      end
+    end
+
+    def update
+
+      if @user.update(user_params)
+        render 'api/users/show', status: :ok
+      else
+        render :edit, status: :unprocessable_entity 
+      end
+    end
+
+    def destroy
+      @user.destroy
     
-  end
-
-  def update
-
-    if @user.update(user_params)
-      redirect_to user_url(@user), notice: "User was successfully updated." 
-    else
-      render :edit, status: :unprocessable_entity 
-    end
-  end
-
-  def destroy
-    @user.destroy
-    
-    redirect_to users_url, notice: "User was successfully destroyed."     
-  end
-
-  private
-    def set_user
-      @user = User.find(params[:id])
+      render 'api/users/show', status: :ok
     end
 
-    def user_params
-      params.require(:user).permit(:name, :password, :mail, :address, :role)
-    end
+    private
+      def set_user
+        @user = User.find(params[:id])
+      end
+
+      def user_params
+        params.require(:user).permit(:name)
+      end
+  end
 end

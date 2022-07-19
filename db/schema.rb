@@ -43,6 +43,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_15_154815) do
   end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> feature/AFL_C04349
   create_table "appoinments", force: :cascade do |t|
     t.string "date"
     t.bigint "doctor_id"
@@ -62,23 +65,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_15_154815) do
     t.string "image_url"
   end
 
-  create_table "comedians", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.integer "id_number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "level"
-  end
-
-  create_table "directors", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-=======
-
   create_table "clients", force: :cascade do |t|
     t.string "name"
     t.string "last_name"
@@ -90,9 +76,32 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_15_154815) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "comedians", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "id_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "level"
+  end
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> feature/AFL_C04349
+
+  create_table "directors", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+<<<<<<< HEAD
 
 >>>>>>> a9b602823a4fb0671bf8985558310d3a83b6d596
 
+=======
+>>>>>>> feature/AFL_C04349
   create_table "dishes", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -103,6 +112,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_15_154815) do
   end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> feature/AFL_C04349
   create_table "doctors", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -147,6 +159,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_15_154815) do
     t.index ["director_id"], name: "index_movies_on_director_id"
   end
 
+  create_table "order_details", force: :cascade do |t|
+    t.bigint "dish_id"
+    t.bigint "client_id"
+    t.integer "isConfirm"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_order_details_on_client_id"
+    t.index ["dish_id"], name: "index_order_details_on_dish_id"
+  end
+
   create_table "owners", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -182,6 +204,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_15_154815) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
 =======
   create_table "order_details", force: :cascade do |t|
     t.bigint "dish_id"
@@ -193,6 +216,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_15_154815) do
     t.index ["dish_id"], name: "index_order_details_on_dish_id"
   end
 >>>>>>> a9b602823a4fb0671bf8985558310d3a83b6d596
+=======
+>>>>>>> feature/AFL_C04349
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
 end

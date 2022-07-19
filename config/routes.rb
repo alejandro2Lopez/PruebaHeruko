@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  
   resources :clients
   resources :dishes
   get 'sign_in', to: 'sessions#new'

@@ -42,6 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_15_154815) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+
   create_table "clients", force: :cascade do |t|
     t.string "name"
     t.string "last_name"
@@ -52,6 +53,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_15_154815) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+
 
   create_table "dishes", force: :cascade do |t|
     t.string "name"
@@ -71,7 +74,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_15_154815) do
     t.index ["client_id"], name: "index_order_details_on_client_id"
     t.index ["dish_id"], name: "index_order_details_on_dish_id"
   end
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
 end

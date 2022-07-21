@@ -14,7 +14,8 @@
       %body
       .area
       %nav.main-menu
-
+        %ul
+          %h4.colorh1 Administrative menu 
         %ul
           %li
             %a{:href => users_path}
@@ -44,7 +45,12 @@
               %i.fa.fa-solid.fa-clock-rotate-left.fa-2x
               %span.nav-text
                 =t('application.manage', model: t('activerecord.modules.state.other'))
-
+        %ul.logout
+          %li
+            %a{:href => sign_in_path}
+              %i.fa.fa-power-off.fa-2x
+              %span.nav-text
+                Logout
 %body
   %div{:style => "position:relative; padding: 250px 100px; top:-250px;"}
     = yield
